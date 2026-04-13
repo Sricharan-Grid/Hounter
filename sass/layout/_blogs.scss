@@ -1,0 +1,242 @@
+.blogs {
+  width: 100%;
+  margin: 3% 0;
+  position: relative;
+
+  .blogBlurBG {
+    width: 30%;
+    height: 90vh;
+    display: inline-block;
+    background-image: url("../../img/blur-bg-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-position: center;
+    top: -20%;
+
+    z-index: 10;
+  }
+  &__headings {
+    &--headTag {
+      text-align: center;
+    }
+
+    &--headLine {
+      text-align: center;
+    }
+  }
+
+  &__posts-container {
+    width: 80%;
+    @include flex-centre();
+    margin: auto;
+    padding: 2rem;
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+
+    &--posts {
+      width: 50%;
+      @include flex-even(column);
+      gap: 2rem;
+      z-index: 20;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 100%;
+        flex-direction: row;
+        margin: auto;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        // width: 95%;
+      }
+    }
+
+    .postCard {
+      width: 100%;
+      height: auto;
+      @include flex-even();
+      align-items: stretch;
+      cursor: pointer;
+      flex-direction: column;
+      transition: all 0.3s;
+      @include translateLeftRightAnimation();
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 30%;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 5% auto;
+        @include appearAnimation();
+      }
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 0.9rem 0 $color-grey-light;
+        border-radius: 1.6rem;
+      }
+
+      &--img {
+        max-width: 30%;
+        min-width: 20rem;
+        max-height: 15vh;
+        border-radius: 1.6rem;
+        margin: 0 1rem;
+
+        //Responsive Tab-Landscape 900px
+        @include respond(tab-port) {
+          min-width: 15rem;
+          max-width: 20%;
+          min-height: 15vh;
+          flex-direction: column;
+          margin: auto;
+          @include appearAnimation();
+        }
+
+        //Responsive Phone 600px
+        @include respond(phone) {
+          min-width: 10rem;
+          max-width: 10%;
+          min-height: 10vh;
+        }
+      }
+
+      &__details {
+        width: 80%;
+        @include flex-even(column);
+        padding: 1rem;
+        //Responsive Tab-Landscape 900px
+        @include respond(tab-port) {
+          width: 100%;
+          padding: 0.6rem;
+        }
+
+        &--authorName {
+          font-size: 1.4rem;
+          font-weight: 400;
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            margin: 3%;
+          }
+        }
+        &--blog-headline {
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 0 1rem;
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            font-size: 1.3rem;
+            text-align: center;
+          }
+
+          //Responsive Phone 600px
+          @include respond(phone) {
+            font-size: 1rem;
+            padding: 0 0.5rem;
+          }
+        }
+
+        &--metadata {
+          width: 100%;
+          @include flex-centre();
+          gap: 1rem;
+          justify-content: flex-start;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: $color-grey;
+          padding: 1rem;
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            font-size: 1.2rem;
+            text-align: center;
+          }
+
+          //Responsive Phone 600px
+          @include respond(phone) {
+            font-size: 1rem;
+            padding: auto 1rem;
+          }
+        }
+
+        &--blog-description {
+          font-size: 1.6rem;
+          font-weight: 300;
+          color: $color-grey;
+          padding: 1rem;
+          @include appearAnimation();
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            font-size: 1.3rem;
+          }
+
+          //Responsive Phone 600px
+          @include respond(phone) {
+            font-size: 1rem;
+          }
+        }
+
+        &--owner {
+          width: 100%;
+        }
+      }
+    }
+
+    &--highlightedPost {
+      width: 50%;
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 80%;
+      }
+    }
+
+    .highlight-postCard {
+      @include flex-even(column);
+      gap: 2rem;
+      @include translateRightLeftAnimation();
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 100%;
+        @include appearAnimation();
+      }
+
+      &--img {
+        min-width: 90%;
+        max-height: 35vh;
+        margin-top: 2rem;
+        // margin: auto;
+        border-radius: 1.6rem;
+      }
+
+      &__details {
+        margin: 0%;
+        padding: 0;
+
+        &--blog-headline {
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 0 1rem;
+
+          //Responsive Phone 600px
+          @include respond(phone) {
+            font-size: 1.2rem;
+          }
+        }
+
+        &--metadata {
+          @include flex-centre();
+          width: 100%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

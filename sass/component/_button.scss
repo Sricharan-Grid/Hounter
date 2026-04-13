@@ -1,0 +1,112 @@
+.btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10rem;
+  text-align: center;
+  @include flex-sb();
+  background-color: rgba($color-white, 0.1);
+  color: $color-white;
+  border: 0.1rem solid $color-white;
+  transition: all 0.5s;
+  @include appearAnimation();
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  //Responsive Phone 500px
+  @include respond(small-phone) {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    background-color: $color-primary-light;
+    color: $color-primary;
+    border: 0.1rem solid $color-primary;
+  }
+}
+
+.light-green-btn {
+  background-color: $color-primary-light;
+  color: $color-primary;
+  border: 0.1rem solid $color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: $color-white;
+    border: 0.1rem solid $color-white;
+  }
+}
+
+.dark-green-btn {
+  background-color: $color-primary;
+  color: $color-white;
+  border: 0.1rem solid $color-white;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-light;
+    color: $color-primary;
+    border: 0.1rem solid $color-white;
+  }
+}
+
+.border-dark-green-btn {
+  color: $color-primary;
+  border: 0.1rem solid $color-primary;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-light;
+    border: 0.1rem solid $color-white;
+  }
+}
+
+.select-btn-wrapper {
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &::after {
+    content: "\2304";
+    color: $color-white;
+    position: absolute;
+    right: 25px;
+    top: 40%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    pointer-events: none;
+  }
+  &:hover::after {
+    scale: 1.2;
+    padding-left: 2rem;
+    color: $color-primary;
+  }
+}
+
+.select-btn {
+  appearance: none;
+  outline: none;
+  padding-right: 4rem;
+}
+
+.btn-icon {
+  margin: auto 1rem 0 0rem;
+}
+
+.svg-icon {
+  margin: 0.5rem;
+}

@@ -1,0 +1,157 @@
+.testimonials {
+  width: 100%;
+  @include flex-centre(column);
+  position: relative;
+  margin: 5% auto;
+
+  &__headings {
+    padding: 2rem;
+    &--headTag {
+      text-align: center;
+    }
+
+    &--headLine {
+      text-align: center;
+    }
+  }
+
+  &__slider-nav {
+    flex: 1 0 100%;
+    @include flex-centre();
+    gap: 1rem;
+    position: absolute;
+    @include appearAnimation();
+    bottom: 0;
+    z-index: 1;
+
+    &--dot {
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $color-grey-light;
+      border-radius: 50%;
+      transition: opacity ease 0.5s;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: $color-grey;
+      }
+    }
+  }
+}
+
+.testimonials-container {
+  width: 60%;
+  @include flex-centre();
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: visible;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 8%;
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    width: 80%;
+    margin: 3% auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-card {
+    flex: 1 0 100%;
+    height: 100%;
+    overflow: visible;
+    object-fit: cover;
+    margin: auto;
+    position: relative;
+    scroll-snap-align: center;
+
+    &__bg {
+      width: 100%;
+      height: 50vh;
+      background-image: url("../../img/houses/house9.jpg");
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+      border-radius: 0.8rem;
+
+      &--1 {
+        background-image: url("../../img/houses/house4.jpg");
+      }
+      &--2 {
+        background-image: url("../../img/houses/house3.jpg");
+      }
+      &--3 {
+        background-image: url("../../img/houses/house2.jpg");
+      }
+    }
+
+    &__details {
+      width: 70%;
+      @include flex-centre(column);
+      position: absolute;
+      bottom: -15%;
+      left: 15%;
+      padding: 1rem;
+      margin: auto;
+      background-color: $color-white;
+      box-shadow: 0 0 0.8rem 0.1rem $color-grey-light;
+      border-radius: 1.6rem;
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        width: 80%;
+        left: 10%;
+      }
+
+      &--heading {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $color-navy-blue;
+        padding: 1rem;
+        align-self: flex-start;
+        @include appearAnimation();
+
+        //Responsive Phone 600px
+        @include respond(phone) {
+          font-size: 1.3rem;
+        }
+      }
+
+      &--description {
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 1rem;
+        @include appearAnimation();
+
+        //Responsive Phone 600px
+        @include respond(phone) {
+          font-size: 1rem;
+        }
+      }
+
+      &--card-owner {
+        width: 100%;
+        padding: 1rem;
+        @include flex-centre();
+        gap: 1rem;
+        justify-self: flex-start;
+      }
+
+      &--owner-profile-Details {
+        flex: 1 0 50%;
+        padding: 1rem;
+      }
+
+      &--rating {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $color-navy-blue;
+      }
+    }
+  }
+}

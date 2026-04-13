@@ -1,0 +1,125 @@
+// Animations for Smooth Appear
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@mixin appearAnimation() {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+  // animation: appear 0.3s ease-out forwards;
+}
+
+// Animations for Adding Toast message
+@keyframes addToastMessage {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin addToastMessageAnimation() {
+  animation: addToastMessage 0.3s ease-out forwards;
+}
+
+// Animations for Removing a Toast Message
+@keyframes removeToastMessage {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@mixin removeToastMessageAnimation() {
+  animation: removeToastMessage 0.3s ease-out forwards;
+}
+
+// Animations for Adding a Cookies Popup
+@keyframes addCookies {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin addCookiesAnimation() {
+  animation: addCookies 0.3s ease-out forwards;
+}
+
+// Animations for Removing a Cookies Popup
+@keyframes removeCookies {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@mixin removeCookiesAnimation() {
+  animation: removeCookies 0.3s ease-out forwards;
+}
+
+// Animations for Translate Through X Axis (Left to Right)
+@keyframes translateLeftRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin translateLeftRightAnimation() {
+  animation: translateLeftRight linear;
+  animation-timeline: view();
+  animation-range: entry 0% contain 30%;
+}
+
+// Animations for Translate Through X Axis (Right to Left)
+@keyframes translateRightLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin translateRightLeftAnimation() {
+  animation: translateRightLeft linear;
+  animation-timeline: view();
+  animation-range: entry 0% contain 30%;
+}

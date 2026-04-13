@@ -1,0 +1,197 @@
+.tour {
+  width: 100%;
+  @include flex-even();
+  margin: auto;
+  position: relative;
+  z-index: 20;
+  // margin: 5%;
+  padding: 0 5%;
+  // overflow-x: hidden;
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+.tourBlurBG {
+  width: 40%;
+  height: 100vh;
+  background-image: url(../../img/blur-bg-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  z-index: 10;
+}
+
+.tour-left {
+  width: 53%;
+  @include flex-centre(column);
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    width: 90%;
+    margin: auto;
+  }
+
+  &__desc {
+    width: 70%;
+    align-self: flex-start;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: $color-grey;
+    padding: 1rem 2.5rem;
+    @include translateLeftRightAnimation();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      margin: auto;
+      text-align: center;
+      @include appearAnimation();
+    }
+  }
+
+  &__amenities {
+    width: 90%;
+    @include flex-centre(column);
+    align-self: flex-start;
+    margin: auto;
+    padding: 2rem;
+    @include translateLeftRightAnimation();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      @include appearAnimation();
+    }
+
+    &--heading {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $color-navy-blue;
+      padding: 1rem;
+      align-self: flex-start;
+      text-align: left;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        text-align: center;
+        @include appearAnimation();
+      }
+    }
+
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(20rem, 1fr));
+      gap: 1.6rem;
+      align-self: start;
+      margin: 2rem;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        margin: auto;
+        @include appearAnimation();
+      }
+    }
+
+    &--gridItems {
+      list-style: none;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $color-grey;
+    }
+  }
+
+  &__card-owner {
+    width: 70%;
+    // flex: 1;
+    margin-left: 5%;
+    align-self: flex-start;
+    border-top: 0.2rem solid $color-grey;
+    padding-top: 3rem;
+    @include translateLeftRightAnimation();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      margin: auto;
+      @include appearAnimation();
+    }
+  }
+
+  &__owner-profile-Details {
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+.tour-right {
+  width: 44%;
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    width: 90%;
+    margin: 3% auto;
+  }
+  &__clips {
+    width: 100%;
+    // @include flex-centre();
+    margin: auto;
+    position: relative;
+    z-index: 30;
+    @include translateRightLeftAnimation();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      @include appearAnimation();
+    }
+
+    &--video {
+      width: 90%;
+      aspect-ratio: 9 / 16;
+      height: 40vh;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 100%;
+        @include appearAnimation();
+      }
+    }
+
+    &--img {
+      width: 80%;
+      @include flex-centre();
+      gap: 1rem;
+      align-items: flex-end;
+      position: absolute;
+      bottom: -10%;
+      @include appearAnimation();
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 100%;
+        @include appearAnimation();
+      }
+    }
+
+    &--img1 {
+      width: 40%;
+      border-radius: 0.8rem;
+      @include appearAnimation();
+    }
+
+    &--img2,
+    &--img3 {
+      width: 16%;
+      height: 8vh;
+      border-radius: 0.8rem;
+      align-content: flex-end;
+      @include appearAnimation();
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 20%;
+        height: 12dvh;
+      }
+    }
+  }
+}

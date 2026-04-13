@@ -1,0 +1,256 @@
+.featuredHome {
+  width: 100%;
+  //   background-color: aqua;
+  margin: 10% auto;
+  @include flex-centre(column);
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    margin: 20% auto;
+  }
+}
+
+.featuredHome-Header {
+  width: 90%;
+  @include flex-sb();
+  margin: auto;
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__actions {
+    width: 20%;
+    @include flex-sb(column);
+    position: relative;
+    @include appearAnimation();
+
+    &--headTag {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $color-secondary;
+    }
+
+    &--headLine {
+      margin-left: 3rem;
+      align-self: flex-start;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: $color-navy-blue;
+      line-height: 6rem;
+    }
+  }
+
+  &__categories {
+    max-width: 40%;
+    @include flex-sb();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      max-width: 100%;
+      justify-content: flex-start;
+      margin: 2% auto;
+    }
+
+    &--btn {
+      margin: auto 2rem;
+      @include flex-sb();
+      border: 0.1rem solid $color-primary-light;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        margin: auto 1rem;
+      }
+      &:focus {
+        border: 0;
+      }
+
+      &:active {
+        border: 0;
+      }
+    }
+  }
+
+  &__scrollActions {
+    width: 20%;
+    @include flex-even();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      width: 90%;
+      justify-content: space-between;
+    }
+
+    &--btn {
+      border-radius: 20rem;
+      // padding: 20rem;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .nextBtn,
+  .prevBtn {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 60%;
+    padding: 2rem;
+    // margin: a;
+    text-align: center;
+  }
+}
+
+.featuredHome-sildes {
+  width: 80%;
+  @include flex-even();
+  gap: 2rem;
+  overflow: auto;
+  padding: 2rem;
+  z-index: 30;
+  // position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__card {
+    // flex: 1 0 30%;
+    @include flex-sb(column);
+    // @include appearAnimation;
+    @include appearAnimation();
+
+    //Responsive Phone 600px
+    // @include respond(phone) {
+    //   width: 100%;
+    // }
+
+    &--img {
+      width: 37.5rem;
+      height: 35rem;
+      border-radius: 3rem;
+      padding: 1rem;
+    }
+
+    &--details {
+      width: 100%;
+      @include flex-sb(column);
+      align-items: flex-start;
+      position: relative;
+      padding: 1rem;
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        align-items: center;
+      }
+    }
+  }
+
+  .featuredHome-sildes__card--details &__cardDetails {
+    &--houseName {
+      color: $color-navy-blue;
+      font-weight: 500;
+      font-size: 2rem;
+      padding: 0.5rem;
+    }
+
+    &--price {
+      color: $color-grey;
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+    &--tag {
+      max-width: 50%;
+      border-radius: 3.2rem;
+      padding: 1rem;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 6%;
+      bottom: 150%;
+      transition: all 0.6s;
+      cursor: pointer;
+      @include flex-sb();
+      gap: 1rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .popularTag {
+    background-color: $color-red;
+    color: $color-red-danger;
+  }
+
+  .newHouseTag {
+    background-color: $color-info;
+    color: $color-info-dark;
+  }
+
+  .bestDealTag {
+    background-color: $color-primary-light;
+    color: $color-primary;
+  }
+}
+.card-owner {
+  width: 95%;
+  padding: 1rem 0;
+  @include flex-sb();
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    text-align: center;
+    @include flex-centre();
+  }
+
+  &__profilePic {
+    max-width: 20%;
+    max-height: 4rem;
+    border-radius: 50%;
+    border: 0.1rem solid $color-white;
+  }
+
+  &__profileDetails {
+    width: 85%;
+    &--ownerName {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $color-navy-blue;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        font-size: 1.6rem;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &--location {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $color-grey;
+      padding: 0.2rem 0;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        font-size: 1.2rem;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.horizontal-line {
+}

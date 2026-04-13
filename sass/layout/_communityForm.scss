@@ -1,0 +1,239 @@
+.communityForm {
+  width: 90%;
+  //   background-color: aqua;
+  @include flex-sb();
+  margin: 4% auto;
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__left {
+    width: 39%;
+    @include flex-centre(column);
+    padding: 2rem 1rem;
+    box-shadow: 0 0 0.9rem 0 $color-grey-light;
+    border-radius: 0.8rem;
+    @include translateLeftRightAnimation();
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      width: 100%;
+      @include appearAnimation();
+    }
+
+    &--heading {
+      font-size: 2.4rem;
+      font-weight: 500;
+      padding: 1rem 2rem;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
+    }
+
+    &--text {
+      width: 80%;
+      font-size: 1.6rem;
+      font-weight: 300;
+      padding: 2rem;
+      text-align: center;
+      color: $color-grey;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        font-size: 1.3rem;
+        padding: 1.8rem;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        padding: 1.4rem;
+      }
+    }
+
+    &--img {
+      width: 60%;
+      margin: auto;
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        width: 40%;
+      }
+    }
+  }
+
+  &__right {
+    width: 59%;
+    padding: 3rem 1rem;
+    @include flex-centre(column);
+    box-shadow: 0 0 0.9rem 0 $color-grey-light;
+    border-radius: 0.8rem;
+    @include translateRightLeftAnimation();
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      padding: 2rem 1rem;
+    }
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      width: 100%;
+      @include appearAnimation();
+    }
+
+    .community-joining-form {
+      width: 90%;
+      margin: auto;
+      @include appearAnimation();
+
+      &__inputField {
+        width: 100%;
+        @include flex-even();
+        // justify-content: flex-start;
+        gap: 2rem;
+        padding: 1rem;
+        // @include appearAnimation();
+
+        &--label {
+          flex: 0 0 20%;
+          align-self: center;
+        }
+        &--input {
+          width: 80%;
+          padding: 1.5rem;
+          border-radius: 2.8rem;
+          border: 0.1rem solid $color-grey-light;
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            padding: 1rem;
+          }
+        }
+
+        &--checkbox {
+          width: 100%;
+          @include flex-centre();
+          justify-content: flex-end;
+          margin: 1% auto;
+        }
+
+        &--checkboxLabel {
+          width: 80%;
+          @include flex-sb();
+          justify-content: flex-end;
+          cursor: pointer;
+          gap: 2rem;
+          padding: 1rem;
+          align-items: flex-start;
+          align-self: flex-start;
+          font-size: 1.4rem;
+          font-weight: 400;
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            width: 100%;
+          }
+        }
+
+        &--checkboxInput {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+
+          &:checked ~ .community-joining-form__inputField--checkMark {
+            background-color: $color-primary;
+            border-color: $color-primary;
+
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+
+        &--checkMark {
+          @include flex-centre();
+          height: 2.5rem;
+          width: 2.5rem;
+          padding: 1rem;
+          flex-shrink: 0;
+          background-color: transparent;
+          border: 0.2rem solid $color-grey-light;
+          border-radius: 0.4rem;
+          position: relative;
+          transition: all 0.2s ease-in-out;
+          @include appearAnimation();
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
+      }
+
+      &__education {
+        &--option {
+          color: $color-grey;
+        }
+      }
+
+      &__messageBox {
+        width: 100%;
+        border-radius: 2.8rem;
+        border: 0.1rem solid $color-grey-light;
+        padding: 1rem;
+
+        &--input {
+          width: 100%;
+          min-height: 10dvh;
+          padding: 1rem;
+          border: 0;
+          resize: none;
+          overflow: auto;
+          margin-top: 2%;
+
+          //Responsive Tab-Landscape 900px
+          @include respond(tab-port) {
+            margin-top: 1%;
+          }
+
+          ::content {
+            color: $color-navy-blue;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &--charsCount {
+          // width: 100%;
+          text-align: right;
+          padding: 1rem;
+          color: $color-grey;
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+
+        &--charsCountExceeds {
+          color: $color-red-danger;
+        }
+      }
+
+      &__disableMessageBox {
+        border: 0.1rem solid $color-red-danger;
+        color: $color-red-danger;
+      }
+    }
+  }
+}

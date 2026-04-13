@@ -1,0 +1,87 @@
+.subscribe {
+  width: 100%;
+  @include flex-centre();
+  @include appearAnimation();
+
+  &__content {
+    width: 60%;
+    background-image: url("../../img/newsLetter-banner.png");
+    // background-position: center;
+    background-size: cover;
+    padding: 2rem;
+    border-radius: 3.2rem;
+    margin: 3% 0;
+
+    //Responsive Tab-Landscape 900px
+    @include respond(tab-port) {
+      width: 80%;
+    }
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      width: 90%;
+    }
+
+    &--headline {
+      width: 60%;
+      text-align: center;
+      word-wrap: break-word;
+      margin: auto;
+      padding: 2rem;
+      font-size: 3rem;
+      font-weight: 600;
+      color: $color-navy-blue;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 80%;
+        font-size: 2.5rem;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+
+    &--mailInput {
+      width: 50%;
+      background-color: $color-white;
+      border-radius: 2.8rem;
+      @include flex-sb();
+      gap: 1rem;
+      margin: 3% auto;
+      padding: 0 0 0 1rem;
+      transition: all 0.5s;
+
+      //Responsive Tab-Landscape 900px
+      @include respond(tab-port) {
+        width: 70%;
+      }
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        width: 80%;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    .subscribe-input {
+      flex: 1 0 50%;
+      padding: 0.5rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $color-grey;
+        font-family: "Lexend", sans-serif;
+      }
+    }
+  }
+}

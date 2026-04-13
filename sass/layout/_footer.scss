@@ -1,0 +1,165 @@
+.footer {
+  width: 100%;
+  @include flex-even();
+  gap: 5%;
+  padding: 2rem;
+  position: relative;
+  padding: 0 5%;
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__blurBG {
+    width: 40%;
+    height: 40dvh;
+    background-image: url(../../img/blur-bg-3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 2;
+    right: 0;
+    z-index: 10;
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      bottom: 0;
+      right: 0%;
+    }
+  }
+
+  &__brandInfo {
+    width: 20%;
+    // flex: 0 0 20%;
+    @include flex-centre(column);
+    justify-content: flex-start;
+    align-self: flex-start;
+    z-index: 20;
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      width: 90%;
+      justify-content: center;
+      align-self: center;
+    }
+
+    &--logo {
+      width: 8%;
+      @include appearAnimation();
+    }
+
+    &--brandName {
+      color: $color-navy-blue;
+      font-size: 2rem;
+      @include appearAnimation();
+    }
+
+    &--text {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $color-grey;
+      padding: 1.5rem 0;
+      @include appearAnimation();
+
+      @include respond(phone) {
+        text-align: center;
+      }
+    }
+
+    &--socialMedia {
+      width: 60%;
+      @include flex-even();
+      align-self: flex-start;
+      justify-content: flex-start;
+      gap: 2rem;
+      transition: all 0.3s;
+      padding: 1rem;
+      @include appearAnimation();
+
+      //Responsive Phone 600px
+      @include respond(phone) {
+        margin: auto;
+      }
+    }
+
+    .socialMediaLink {
+      flex: 1 1 0%;
+      @include flex-centre();
+
+      & > svg {
+        align-self: center;
+        transition: all 0.3s;
+      }
+      :hover {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  &__heading {
+    width: 100%;
+    @include flex-centre();
+    gap: 1.5rem;
+    justify-content: flex-start;
+    @include appearAnimation();
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    // flex: 0 0 20%;
+    width: 20%;
+    @include flex-even(column);
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 1rem;
+    z-index: 20;
+    // @include appearAnimation();
+
+    &--navList {
+      align-self: flex-start;
+      list-style: none;
+      line-height: 3rem;
+      cursor: pointer;
+      @include appearAnimation();
+    }
+
+    &--heading {
+      font-size: 1.8rem;
+      font-weight: 500;
+      align-self: flex-start;
+      color: $color-navy-blue;
+      @include appearAnimation();
+    }
+
+    &--link {
+      transition: all 0.3s;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $color-grey;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+  }
+
+  .footer-navs {
+    width: 70%;
+    @include flex-even();
+
+    //Responsive Phone 600px
+    @include respond(phone) {
+      width: 90%;
+      margin: 2% auto;
+      // justify-content: center;
+      // align-self: center;
+    }
+  }
+}

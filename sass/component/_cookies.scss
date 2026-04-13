@@ -1,0 +1,54 @@
+.cookies {
+  width: 30%;
+  background-color: $color-primary-light;
+  border: none;
+  border-radius: 2.8rem;
+  @include flex-even();
+  padding: 0.5rem 1rem;
+  position: fixed;
+  bottom: 4%;
+  right: 35%;
+  z-index: 30;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $color-primary;
+  @include addCookiesAnimation;
+
+  //Responsive Tab-Landscape 900px
+  @include respond(tab-port) {
+    width: 40%;
+  }
+
+  //Responsive Phone 600px
+  @include respond(phone) {
+    width: 60%;
+    right: 20%;
+    font-size: 1.3rem;
+  }
+
+  //Responsive Phone 500px
+  @include respond(small-phone) {
+    width: 65%;
+    right: 18%;
+    font-size: 1.2rem;
+  }
+
+  &__close {
+    transition: all 0.3s;
+    padding: 0.2rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 10%;
+    cursor: pointer;
+
+    :hover {
+      transform: scale(1.05);
+      border: none;
+    }
+  }
+}
+
+.cookies-disable {
+  @include removeCookiesAnimation;
+  visibility: hidden;
+}
