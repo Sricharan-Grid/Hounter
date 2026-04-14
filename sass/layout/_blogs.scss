@@ -63,7 +63,7 @@
       @include flex-even();
       align-items: stretch;
       cursor: pointer;
-      flex-direction: column;
+      // flex-direction: column;
       transition: all 0.3s;
       @include translateLeftRightAnimation();
       //Responsive Tab-Landscape 900px
